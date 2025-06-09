@@ -18,35 +18,37 @@ export const links: LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="h-full">
         <SidebarProvider defaultOpen={true}>
-          <Sidebar>
-            <SidebarHeader>
-              <SidebarTrigger />
-            </SidebarHeader>
-            <SidebarContent>
-              <SidebarGroup>
-                <SidebarMenu>
-                  <SidebarMenuButton asChild>
-                    <NavLink to="/organizations">
-                      <Building2 />
-                      <span>Organizations</span>
-                    </NavLink>
-                  </SidebarMenuButton>
-                </SidebarMenu>
-              </SidebarGroup>
-            </SidebarContent>
-          </Sidebar>
-          <SidebarInset>
-            {children}
-          </SidebarInset>
+          <div className="flex h-full">
+            <Sidebar>
+              <SidebarHeader>
+                <SidebarTrigger />
+              </SidebarHeader>
+              <SidebarContent>
+                <SidebarGroup>
+                  <SidebarMenu>
+                    <SidebarMenuButton asChild>
+                      <NavLink to="/organizations">
+                        <Building2 />
+                        <span>Organizations</span>
+                      </NavLink>
+                    </SidebarMenuButton>
+                  </SidebarMenu>
+                </SidebarGroup>
+              </SidebarContent>
+            </Sidebar>
+            <SidebarInset className="flex-1 overflow-y-auto">
+              {children}
+            </SidebarInset>
+          </div>
         </SidebarProvider>
         <ScrollRestoration />
         <Scripts />
