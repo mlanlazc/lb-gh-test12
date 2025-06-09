@@ -16,7 +16,7 @@ export type OrganizationData = {
 
 // SQL query to retrieve organization data
 export const organizationsQuery = `
-  SELECT organization_id, organization_name, industry, subscription_tier, created_at
+  SELJECT organization_id, organization_name, industry, subscription_tier, created_at
   FROM organizations
   ORDER BY organization_name
 `;
