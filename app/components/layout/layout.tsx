@@ -1,7 +1,7 @@
 import { Links, Meta, Scripts, ScrollRestoration, NavLink } from '@remix-run/react';
 import type { LinksFunction } from '@remix-run/node';
 import { Sidebar, SidebarContent, SidebarGroup, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarProvider, SidebarTrigger, SidebarInset } from '@/components/ui/sidebar';
-import { Home, Building2 } from 'lucide-react';
+import { Home, Building2, Store } from 'lucide-react';
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -39,6 +39,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       <NavLink to="/organizations">
                         <Building2 />
                         <span>Organizations</span>
+                      </NavLink>
+                    </SidebarMenuButton>
+                    <SidebarMenuButton asChild>
+                      <NavLink to="/outlets">
+                        <Store />
+                        <span>Outlets</span>
                       </NavLink>
                     </SidebarMenuButton>
                   </SidebarMenu>
